@@ -31,11 +31,11 @@ marquee {
 }
 
 h1 {
-   color: blue;
-   background-color: dodgerblue;
+   color: white;
+   background-color: #525252;
    font-family: Audiowide;
    text-align: center;
-   text-shadow: 2px 2px 3px mediumseagreen;
+   text-shadow: 2px 2px 3px yellow;
 }
 
 h2 {
