@@ -1,26 +1,27 @@
 body {
-	background-color: black;
+	background-image: url("bg.png");
 }
 
 header {
-	background-color: #e8e8e8;
+	background-color: red;
+	color: white;
 }
 
 footer {
-	background-color: #030642;
+	background-color: black;
 	color: white;
 }
 
 p {
 	color: white;
 	font-family: Comic Sans MS;
-	text-shadow: 2px 2px 3px red;
+	text-shadow: 2px 2px 3px black;
 }
 
 a {
 	color: white;
 	font-family: Comic Sans MS;
-	text-shadow: 2px 2px 3px red;
+	text-shadow: 2px 2px 3px black;
 }
 
 marquee {
@@ -30,11 +31,11 @@ marquee {
 }
 
 h1 {
-   color: blue;
-   background-color: dodgerblue;
+   color: black;
+   background-color: green;
    font-family: Audiowide;
    text-align: center;
-   text-shadow: 2px 2px 3px mediumseagreen;
+   text-shadow: 2px 2px 3px red;
 }
 
 h2 {
