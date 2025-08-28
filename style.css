@@ -43,4 +43,13 @@ h2 {
    text-align: center;
    text-shadow: 2px 2px 3px mediumseagreen;
 }
+
+div3 {
+	border: solid 4px darkgrey;
+	background-color: dodgerblue;
+	color: black;
+	margin: 25px;
+	padding: 25px;
+}
+	
 	
