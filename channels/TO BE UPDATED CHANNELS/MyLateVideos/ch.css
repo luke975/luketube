@@ -1,0 +1,46 @@
+body {
+	background-image: url("bg.png");
+}
+
+header {
+	background-color: #e8e8e8;
+}
+
+footer {
+	background-color: #030642;
+	color: white;
+}
+
+p {
+	color: black;
+	font-family: Comic Sans MS;
+	text-shadow: 2px 2px 3px red;
+}
+
+a {
+	color: black;
+	font-family: Comic Sans MS;
+	text-shadow: 2px 2px 3px red;
+}
+
+marquee {
+	text-shadow: 2px 2px 3px red;
+	color: black;
+	font-family: arial;
+}
+
+h1 {
+   color: blue;
+   background-color: dodgerblue;
+   font-family: Audiowide;
+   text-align: center;
+   text-shadow: 2px 2px 3px mediumseagreen;
+}
+
+h2 {
+   color: black;
+   font-family: 'Courier New', monospace;
+   text-align: center;
+   text-shadow: 2px 2px 3px mediumseagreen;
+}
+	

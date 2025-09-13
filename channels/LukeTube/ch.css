@@ -43,4 +43,13 @@ h2 {
    text-align: center;
    text-shadow: 2px 2px 3px red;
 }
-	
+
+.v {
+	color: white;
+	background-color: #525252;
+	padding: 15px;
+	margin: 20px;
+	border: 4px solid #184c8c;
+	outline: 4px dotted white;
+	float: left;
+}	
