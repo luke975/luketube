@@ -1,13 +1,13 @@
 body {
-	background-image: url("bg.png");
+	background-color:  #FFFF99;
 }
 
 header {
-	background-color: #e8e8e8;
+	background-color: #FFFFCA;
 }
 
 footer {
-	background-color: #030642;
+	background-color: #CCCC7A;
 	color: white;
 }
 
@@ -44,12 +44,13 @@ h2 {
    text-shadow: 2px 2px 3px mediumseagreen;
 }
 
-div3 {
-	border: solid 4px darkgrey;
-	background-color: dodgerblue;
+.v {
 	color: black;
-	margin: 25px;
-	padding: 25px;
+	background-color: #696969;
+	padding: 15px;
+	margin: 20px;
+	border: 4px solid #e8e8e8;
+	outline: 4px dotted black;
+	float: left;
 }
-	
 	

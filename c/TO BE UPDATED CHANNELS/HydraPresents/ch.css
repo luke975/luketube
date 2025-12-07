@@ -3,22 +3,23 @@ body {
 }
 
 header {
-	background-color: #e8e8e8;
+	background-color: lime;
+	color: black;
 }
 
 footer {
-	background-color: #030642;
+	background-color: black;
 	color: white;
 }
 
 p {
-	color: black;
+	color: white;
 	font-family: Comic Sans MS;
 	text-shadow: 2px 2px 3px red;
 }
 
 a {
-	color: black;
+	color: white;
 	font-family: Comic Sans MS;
 	text-shadow: 2px 2px 3px red;
 }
@@ -43,13 +44,4 @@ h2 {
    text-align: center;
    text-shadow: 2px 2px 3px mediumseagreen;
 }
-
-div3 {
-	border: solid 4px darkgrey;
-	background-color: dodgerblue;
-	color: black;
-	margin: 25px;
-	padding: 25px;
-}
-	
 	
