@@ -1,0 +1,56 @@
+body {
+	background-image: url("bg.png");
+}
+
+header {
+	background-color: #7AFF7F;
+}
+
+footer {
+	background-color: #007504;
+	color: white;
+}
+
+p {
+	color: black;
+	font-family: Comic Sans MS;
+	text-shadow: 2px 2px 3px white;
+}
+
+a {
+	color: white;
+	font-family: Comic Sans MS;
+	text-shadow: 2px 2px 3px red;
+}
+
+marquee {
+	text-shadow: 2px 2px 3px red;
+	color: black;
+	font-family: arial;
+}
+
+h1 {
+   color: blue;
+   background-color: dodgerblue;
+   font-family: Audiowide;
+   text-align: center;
+   text-shadow: 2px 2px 3px mediumseagreen;
+}
+
+h2 {
+   color: black;
+   font-family: 'Courier New', monospace;
+   text-align: center;
+   text-shadow: 2px 2px 3px blue;
+}
+
+.v {
+	color: white;
+	background-color: #009933;
+	padding: 15px;
+	margin: 20px;
+	border: 4px solid #e8e8e8;
+	outline: 4px dotted black;
+	float: left;
+}
+	
