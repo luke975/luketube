@@ -12,9 +12,15 @@ footer {
 }
 
 p {
-	color: black;
+	color: white;
 	font-family: Comic Sans MS;
-	text-shadow: 2px 2px 3px red;
+	text-shadow: 2px 2px 3px blue;
+}
+
+button {
+	color: white;
+	background-color: blue;
+	border: dashed 4px black;
 }
 
 a {
