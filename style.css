@@ -1,5 +1,5 @@
 body {
-	background-image: url("bg.png");
+	background-color: #b8b8b8;
 }
 
 header {
@@ -12,9 +12,9 @@ footer {
 }
 
 p {
-	color: white;
+	color: black;
 	font-family: Comic Sans MS;
-	text-shadow: 2px 2px 3px blue;
+	text-shadow: 2px 2px 3px red;
 }
 
 button {
