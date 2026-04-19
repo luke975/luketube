@@ -8,4 +8,5 @@ To upload a video, make a channel, or have a channel edited, you need to contact
 
 If im doing this right, you are currently viewing the **MAIN** branch. This branch contains the files that will be hosted on the website.
 
-LukeTube version number meaning: (Main / important update number).(Revision number).(Patch number).(Patch for a patch number- typically not used)
+LukeTube version number meaning: (Main / important update number).(Revision number).(Hotfix number).(Patch for a patch number- typically not used).
+Example: LukeTube Update 6.4.1 = The 1st hotfix of the 4th revision of Release 6
