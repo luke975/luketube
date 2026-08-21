@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LukeTube 2 | Watch & Discuss</title>
+    <style>
+        :root {
+            --yt-bg: #0f0f0f;
+            --yt-text: #f1f1f1;
+            --yt-muted: #aaa;
+            --yt-input-bg: #121212;
+            --yt-border: #27272a;
+            --yt-blue: #3ea6ff;
+            --yt-btn-hover: #272727;
+            --yt-accent: #facc15;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: "Roboto", "Segoe UI", sans-serif; }
+        body { background-color: var(--yt-bg); color: var(--yt-text); padding: 20px 10px; }
+
+        .main-wrapper { max-width: 900px; margin: 0 auto; }
+
+        /* Video Player Section */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            background: #000;
+            margin-bottom: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .video-container iframe, 
+        .video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Video Info Header */
+        .video-meta { margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid var(--yt-border); }
+        .video-title { font-size: 1.3rem; font-weight: 700; color: var(--yt-text); margin-bottom: 8px; }
+        .video-subtext { color: var(--yt-muted); font-size: 0.9rem; }
+
+        /* Comments Section Below Video */
+        .comments-section { margin-top: 24px; }
+        .comments-header { display: flex; align-items: center; gap: 24px; margin-bottom: 24px; }
+        .comments-count { font-size: 18px; font-weight: 700; }
+
+        /* Comment Input Form */
+        .add-comment-box { display: flex; gap: 16px; margin-bottom: 32px; }
+        .user-avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--yt-accent); color: #000; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0; }
+        
+        .input-container { flex-grow: 1; display: flex; flex-direction: column; gap: 8px; }
+        .username-input { background: none; border: none; border-bottom: 1px solid var(--yt-border); color: var(--yt-text); padding: 4px 0; font-size: 13px; font-weight: 600; outline: none; width: 200px; }
+        .username-input:focus { border-bottom: 2px solid var(--yt-text); }
+        
+        .comment-input { background: none; border: none; border-bottom: 1px solid var(--yt-border); color: var(--yt-text); padding: 4px 0; font-size: 14px; outline: none; resize: none; min-height: 24px; }
+        .comment-input:focus { border-bottom: 2px solid var(--yt-text); }
+
+        .form-actions { display: flex; justify-content: flex-end; gap: 8px; margin-top: 8px; }
+        .btn { padding: 8px 16px; border-radius: 18px; border: none; font-weight: 600; font-size: 14px; cursor: pointer; }
+        .btn-cancel { background: transparent; color: var(--yt-text); }
+        .btn-cancel:hover { background: var(--yt-btn-hover); }
+        .btn-submit { background: var(--yt-blue); color: #0f0f0f; }
+        .btn-submit:disabled { background: #333; color: #717171; cursor: default; }
+
+        /* Comments Display List */
+        .comments-list { display: flex; flex-direction: column; gap: 20px; }
+        .comment-item { display: flex; gap: 16px; }
+        .comment-content { display: flex; flex-direction: column; gap: 4px; flex-grow: 1; }
+        
+        .comment-meta { display: flex; align-items: center; gap: 8px; font-size: 13px; }
+        .author-name { font-weight: 600; color: var(--yt-text); }
+        .comment-time { color: var(--yt-muted); font-size: 12px; }
+
+        .comment-text { font-size: 14px; line-height: 1.4; white-space: pre-wrap; margin-top: 2px; }
+
+        /* Action Buttons (Like & Reply) */
+        .comment-actions { display: flex; align-items: center; gap: 16px; margin-top: 6px; font-size: 12px; color: var(--yt-muted); }
+        .action-btn { background: none; border: none; color: var(--yt-muted); cursor: pointer; display: flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; padding: 6px 8px; border-radius: 12px; }
+        .action-btn:hover { background: var(--yt-btn-hover); color: var(--yt-text); }
+        .action-btn svg { fill: currentColor; width: 16px; height: 16px; }
+
+        /* Replies Container */
+        .replies-container { margin-left: 56px; margin-top: 12px; display: flex; flex-direction: column; gap: 12px; }
+        .reply-form-wrap { margin-top: 8px; }
+    </style>
+</head>
+<body>
+
+<div class="main-wrapper">
+    <!-- 1. VIDEO PLAYER AREA -->
+    <div class="video-container">
+        <!-- Swap src with your actual video or stream link -->
+        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="LukeTube 2 Video Player" allowfullscreen></iframe>
+    </div>
+
+    <!-- 2. VIDEO TITLE & METADATA -->
+    <div class="video-meta">
+        <h1 class="video-title">LukeTube 2 - Update 8 Teaser & Progress Showcase</h1>
+        <p class="video-subtext">LukeTube Network &bull; Building Update 8 piece by piece</p>
+    </div>
+
+    <!-- 3. COMMENT SECTION DIRECTLY BELOW VIDEO -->
+    <div class="comments-section">
+        <div class="comments-header">
+            <span class="comments-count" id="comments-count">0 Comments</span>
+        </div>
+
+        <!-- Main Input Box -->
+        <div class="add-comment-box">
+            <div class="user-avatar" id="main-avatar">?</div>
+            <div class="input-container">
+                <input type="text" id="main-username" class="username-input" placeholder="Your Username..." oninput="updateAvatar('main-username', 'main-avatar')">
+                <textarea id="main-comment-text" class="comment-input" rows="1" placeholder="Add a comment..."></textarea>
+                <div class="form-actions">
+                    <button class="btn btn-cancel" onclick="resetForm()">Cancel</button>
+                    <button class="btn btn-submit" onclick="addComment()">Comment</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Rendered Comments -->
+        <div class="comments-list" id="comments-list"></div>
+    </div>
+</div>
+
+<script>
+    let commentsData = JSON.parse(localStorage.getItem('luketube2_video_comments')) || [];
+
+    function saveComments() {
+        localStorage.setItem('luketube2_video_comments', JSON.stringify(commentsData));
+        renderComments();
+    }
+
+    function updateAvatar(inputId, avatarId) {
+        const val = document.getElementById(inputId).value.trim();
+        document.getElementById(avatarId).innerText = val ? val.charAt(0).toUpperCase() : '?';
+    }
+
+    function addComment() {
+        const username = document.getElementById('main-username').value.trim() || 'Anonymous User';
+        const text = document.getElementById('main-comment-text').value.trim();
+
+        if (!text) return;
+
+        const newComment = {
+            id: Date.now(),
+            author: username,
+            text: text,
+            likes: 0,
+            time: 'Just now',
+            replies: []
+        };
+
+        commentsData.unshift(newComment);
+        document.getElementById('main-comment-text').value = '';
+        saveComments();
+    }
+
+    function toggleLike(id, isReply = false, parentId = null) {
+        if (!isReply) {
+            const comment = commentsData.find(c => c.id === id);
+            if (comment) comment.likes++;
+        } else {
+            const parent = commentsData.find(c => c.id === parentId);
+            if (parent) {
+                const reply = parent.replies.find(r => r.id === id);
+                if (reply) reply.likes++;
+            }
+        }
+        saveComments();
+    }
+
+    function showReplyBox(parentId) {
+        const existingForm = document.getElementById(`reply-box-${parentId}`);
+        if (existingForm) {
+            existingForm.remove();
+            return;
+        }
+
+        const replyContainer = document.getElementById(`replies-${parentId}`);
+        const replyFormHtml = `
+            <div class="add-comment-box reply-form-wrap" id="reply-box-${parentId}">
+                <div class="user-avatar" id="avatar-reply-${parentId}">?</div>
+                <div class="input-container">
+                    <input type="text" id="user-reply-${parentId}" class="username-input" placeholder="Your Username..." oninput="updateAvatar('user-reply-${parentId}', 'avatar-reply-${parentId}')">
+                    <textarea id="text-reply-${parentId}" class="comment-input" rows="1" placeholder="Add a reply..."></textarea>
+                    <div class="form-actions">
+                        <button class="btn btn-cancel" onclick="document.getElementById('reply-box-${parentId}').remove()">Cancel</button>
+                        <button class="btn btn-submit" onclick="addReply(${parentId})">Reply</button>
+                    </div>
+                </div>
+            </div>
+        `;
+        replyContainer.insertAdjacentHTML('beforebegin', replyFormHtml);
+    }
+
+    function addReply(parentId) {
+        const username = document.getElementById(`user-reply-${parentId}`).value.trim() || 'Anonymous User';
+        const text = document.getElementById(`text-reply-${parentId}`).value.trim();
+
+        if (!text) return;
+
+        const parent = commentsData.find(c => c.id === parentId);
+        if (parent) {
+            parent.replies.push({
+                id: Date.now(),
+                author: username,
+                text: text,
+                likes: 0,
+                time: 'Just now'
+            });
+            saveComments();
+        }
+    }
+
+    function renderComments() {
+        const container = document.getElementById('comments-list');
+        const countHeader = document.getElementById('comments-count');
+        
+        let totalCount = commentsData.length;
+        commentsData.forEach(c => totalCount += c.replies.length);
+        countHeader.innerText = `${totalCount} Comments`;
+
+        container.innerHTML = '';
+
+        commentsData.forEach(comment => {
+            const firstLetter = comment.author.charAt(0).toUpperCase();
+            
+            let repliesHtml = '';
+            comment.replies.forEach(reply => {
+                const replyLetter = reply.author.charAt(0).toUpperCase();
+                repliesHtml += `
+                    <div class="comment-item">
+                        <div class="user-avatar" style="background: #333; color: #fff;">${replyLetter}</div>
+                        <div class="comment-content">
+                            <div class="comment-meta">
+                                <span class="author-name">@${escapeHtml(reply.author)}</span>
+                                <span class="comment-time">${reply.time}</span>
+                            </div>
+                            <div class="comment-text">${escapeHtml(reply.text)}</div>
+                            <div class="comment-actions">
+                                <button class="action-btn" onclick="toggleLike(${reply.id}, true, ${comment.id})">
+                                    <svg viewBox="0 0 24 24"><path d="M1 21h4V9H1v12zm22-11c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.58 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2z"/></svg>
+                                    ${reply.likes || ''}
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+
+            const commentHtml = `
+                <div class="comment-item">
+                    <div class="user-avatar">${firstLetter}</div>
+                    <div class="comment-content">
+                        <div class="comment-meta">
+                            <span class="author-name">@${escapeHtml(comment.author)}</span>
+                            <span class="comment-time">${comment.time}</span>
+                        </div>
+                        <div class="comment-text">${escapeHtml(comment.text)}</div>
+                        <div class="comment-actions">
+                            <button class="action-btn" onclick="toggleLike(${comment.id})">
+                                <svg viewBox="0 0 24 24"><path d="M1 21h4V9H1v12zm22-11c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.58 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2z"/></svg>
+                                ${comment.likes || ''}
+                            </button>
+                            <button class="action-btn" onclick="showReplyBox(${comment.id})">Reply</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="replies-container" id="replies-${comment.id}">
+                    ${repliesHtml}
+                </div>
+            `;
+            container.innerHTML += commentHtml;
+        });
+    }
+
+    function resetForm() {
+        document.getElementById('main-comment-text').value = '';
+    }
+
+    function escapeHtml(str) {
+        return str.replace(/[&<>"']/g, function(m) {
+            return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' }[m];
+        });
+    }
+
+    // Initial Load
+    renderComments();
+</script>
+
+</body>
+</html>

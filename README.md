@@ -1,5 +1,7 @@
 # LukeTube Beta
 
+Note that this fork is now the REAL DEAL for LukeTube. This is NOT A FAKE, email the email listed on my old account (my email) if you want to make sure.
+
 YouTube "Alternative" & Video upload website for me & my friends.
 
 Because its hosted through GitHub Pages, videos are in 480p (If higher resolution it is even harder to deal with the 100mb file limit).
